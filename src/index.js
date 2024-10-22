@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 const axios = require("axios");
 const { TwitterApi } = require("twitter-api-v2");
 // const OpenAI = require("openai");
@@ -50,34 +50,33 @@ const words = [
 async function execute() {
   try {
     // ------------
-    console.log("here = ", process.env);
-    // const data = {
-    //   id: "cm1926mxf0006ekfvp3xr69da",
-    //   inputs: [words[Math.floor(Math.random() * words.length)]],
-    // };
-    // const glifResponse = await fetch("https://simple-api.glif.app", {
-    //   method: "POST",
-    //   headers: {
-    //     Authorization: `Bearer ${process.env.GLIF_API_TOKEN2}`,
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // }).then((resp) => resp.json());
-    // console.log("glifResponse = ", glifResponse);
+    const data = {
+      id: "cm1926mxf0006ekfvp3xr69da",
+      inputs: [words[Math.floor(Math.random() * words.length)]],
+    };
+    const glifResponse = await fetch("https://simple-api.glif.app", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.GLIF_API_TOKEN2}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((resp) => resp.json());
+    console.log("glifResponse = ", glifResponse);
 
-    // // ------------
-    // const response = await axios.get(glifResponse.output, {
-    //   responseType: "arraybuffer",
-    // });
-    // const imageData = Buffer.from(response.data);
+    // ------------
+    const response = await axios.get(glifResponse.output, {
+      responseType: "arraybuffer",
+    });
+    const imageData = Buffer.from(response.data);
 
-    // // ------------
-    // const mediaId = await client.v1.uploadMedia(imageData, { type: "jpg" });
+    // ------------
+    const mediaId = await client.v1.uploadMedia(imageData, { type: "jpg" });
 
-    // // ------------
-    // await rwClient.v2.tweet({
-    //   media: { media_ids: [mediaId] },
-    // });
+    // ------------
+    await rwClient.v2.tweet({
+      media: { media_ids: [mediaId] },
+    });
 
     console.log("success");
   } catch (error) {
