@@ -18,10 +18,15 @@ jobs:
         with:
           node-version: "16.x" # Specify the Node.js version
 
+        # Install dependencies if package.json exists
+      - name: Install dependencies
+        run: |
+          npm install
+
       # Inject secrets as environment variables
       - name: Run Node.js Script with Env Variables
         run: |
-          node src/index.js
+          npm start
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_SECRET: ${{ secrets.API_SECRET }}
