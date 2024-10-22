@@ -21,7 +21,7 @@ jobs:
       # Inject secrets as environment variables
       - name: Run Node.js Script with Env Variables
         run: |
-          node path/to/your-script.js
+          node src/index.js
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_SECRET: ${{ secrets.API_SECRET }}
