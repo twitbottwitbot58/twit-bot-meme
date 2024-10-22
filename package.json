@@ -1,0 +1,19 @@
+{
+  "name": "tweet-bot-wmm",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@twitter-api-v2/plugin-token-refresher": "^1.0.0",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "openai": "^4.68.1",
+    "twitter-api-v2": "^1.18.0"
+  }
+}
