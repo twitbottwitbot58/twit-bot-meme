@@ -57,7 +57,6 @@ const words = [
   "thou shalt work for your bags",
   "Kek",
   "one of us one of us",
-  "andrew tate",
   "printing money",
   "we are just pre-rich",
   "Your size is not size",
@@ -71,6 +70,8 @@ const words = [
   'a farmer is confused and wondering "is ten million enough to retire?"',
   'Jesus says "stop yappin bitch"',
   `a rich king wearing gold necklace saying "I'm in it for the tech"`,
+  `a brown skinned man says "banana zone baby"`,
+  "andrew tate",
 ];
 
 async function fetchImg(num) {
@@ -93,8 +94,17 @@ async function fetchImg(num) {
 async function execute() {
   try {
     // ------------
-    const glifResponse = await fetchImg(1).catch((err) => fetchImg(2));
-    console.log("glifResponse = ", glifResponse);
+    let glifResponse = await fetchImg(1).catch((err) => ({ error: err }));
+    console.log("glifResponse 1 = ", glifResponse);
+
+    if (glifResponse.error) {
+      glifResponse = await fetchImg(2);
+    }
+    console.log("glifResponse 2 = ", glifResponse);
+
+    if (glifResponse.error) {
+      throw new Error(glifResponse.error);
+    }
 
     // ------------
     const response = await axios.get(glifResponse.output, {
