@@ -71,7 +71,7 @@ const words = [
   'Jesus says "stop yappin bitch"',
   `a rich king wearing gold necklace saying "I'm in it for the tech"`,
   `a brown skinned man says "banana zone baby"`,
-  "andrew tate",
+  // "andrew tate",
 ];
 
 async function fetchImg(num) {
