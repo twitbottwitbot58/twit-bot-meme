@@ -69,6 +69,9 @@ async function fetchImg(num) {
     id: "cm1926mxf0006ekfvp3xr69da",
     inputs: [words[Math.floor(Math.random() * words.length)]],
   };
+  if (num === 1) {
+    throw new Error("failed");
+  }
   return fetch("https://simple-api.glif.app", {
     method: "POST",
     headers: {
