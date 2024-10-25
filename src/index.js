@@ -88,13 +88,15 @@ async function fetchImg(num) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then((resp) => resp.json());
+  })
+    .then((resp) => resp.json())
+    .catch((err) => ({ error: err }));
 }
 
 async function execute() {
   try {
     // ------------
-    let glifResponse = await fetchImg(1).catch((err) => ({ error: err }));
+    let glifResponse = await fetchImg(1);
     console.log("glifResponse 1 = ", glifResponse);
 
     if (glifResponse.error) {
