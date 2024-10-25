@@ -98,6 +98,7 @@ async function execute() {
 
     // ------------
     await rwClient.v2.tweet({
+      text: "$WMM",
       media: { media_ids: [mediaId] },
     });
 
