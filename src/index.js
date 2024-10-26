@@ -46,7 +46,7 @@ const words = [
   // "Believe in something",
   "Thanks for the exit liquidity, A wizard on the tower giving food to people",
   "ye heavenly booty",
-  "your size is not size",
+  // "your size is not size",
   "grand rising (good morning)",
   // "A king telling his squire to park his Bugatti",
   "banger",
@@ -71,6 +71,11 @@ const words = [
   'Jesus says "stop yappin bitch"',
   `a rich king wearing gold necklace saying "I'm in it for the tech"`,
   `a brown skinned man says "banana zone baby"`,
+  "snoop dogg smoking weed",
+  "donald trump 2024",
+  "me with the boys",
+  "old bald man saying choo choo mfs",
+  "yes baby shake that booty",
   // "andrew tate",
 ];
 
